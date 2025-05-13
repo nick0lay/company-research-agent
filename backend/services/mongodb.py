@@ -9,6 +9,8 @@ class MongoDBService:
         self.client = MongoClient(
             uri,
             tlsCAFile=certifi.where(),
+            tlsAllowInvalidCertificates=True,
+            tls=True,
             retryWrites=True,
             w='majority'
         )
