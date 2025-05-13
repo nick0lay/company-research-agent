@@ -1,0 +1,31 @@
+{
+  "name": "Company Research Agent",
+  "description": "An AI-powered agent for generating comprehensive company research reports",
+  "repository": "https://github.com/nick0lay/company-research-agent",
+  "logo": "https://raw.githubusercontent.com/yourusername/company-research-agent/main/static/logo.png",
+  "keywords": ["python", "fastapi", "ai", "research", "openai", "tavily"],
+  "env": {
+    "OPENAI_API_KEY": {
+      "description": "Your OpenAI API key",
+      "required": true
+    },
+    "TAVILY_API_KEY": {
+      "description": "Your Tavily API key for web search",
+      "required": true
+    },
+    "GEMINI_API_KEY": {
+      "description": "Your Google Gemini API key",
+      "required": false
+    },
+    "MONGODB_URI": {
+      "description": "MongoDB URI for persistence (optional)",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "stack": "heroku-22"
+} 

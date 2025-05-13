@@ -27,3 +27,6 @@ node_modules/
 Procfile
 .vercel
 .ebextensions
+
+# Cursor
+.cursor
