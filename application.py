@@ -107,7 +107,9 @@ async def process_research(job_id: str, data: ResearchRequest):
     try:
         if mongodb:
             mongodb.create_job(job_id, data.dict())
-        await asyncio.sleep(1)  # Allow WebSocket connection
+            await asyncio.sleep(3)  # Allow WebSocket connection when MongoDB is enabled (increased from 1s)
+        else:
+            await asyncio.sleep(1)  # Original sleep time when MongoDB is disabled
 
         await manager.send_status_update(job_id, status="processing", message="Starting research")
 
